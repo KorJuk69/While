@@ -8,7 +8,20 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         int a = scanner.nextInt();
-        System.out.print(a);
+        int i = 1;
+        int b = 1;
+
+        while (i<=a){
+
+            if((i-b)==0){
+
+                System.out.print(i + " ");
+                b=b*2;
+
+            }
+            i++;
+
+        }
 
     }
 }
