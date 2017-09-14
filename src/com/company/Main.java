@@ -7,8 +7,18 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        int a = scanner.nextInt();
-        System.out.print(a);
+        int N = scanner.nextInt();
+        int k=0;
+        int b=1;
+
+        while(b<N){
+
+            b=b*2;
+            k++;
+
+        }
+
+        System.out.print(k);
 
     }
 }
