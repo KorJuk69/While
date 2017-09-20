@@ -7,30 +7,55 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
+        int sosud1 = scanner.nextInt();
+        int sosud2 = scanner.nextInt();
         int n = scanner.nextInt();
-        int i=0;
-        int sosud1 = a;
-        int sosud2 = b;
+        int i = 0;
+        int a = 0;
+        int b = 0;
 
-        if ((n>a)||(n>b)){
+        if ((n>sosud1)||(n>sosud2)||((sosud1==sosud2)&&(sosud1!=n))){
             System.out.print("Impossible");
         }
         else {
 
-            while ((a!=n)||(b!=n)){
+            while ((a!=n)&&(b!=n)){
 
-                if((sosud1==sosud2)&&(sosud1!=n)){
-                    System.out.print("Impossible");
-                    break;
-                }
-                else{
-                    if (sosud1<sosud2){
+                if (sosud1<sosud2){
 
-                        //В душе не ебу как это реализовывать
-
+                    while (b<(sosud2-sosud1)) {
+                        if (a==0){
+                            System.out.println(">A");
+                            a = sosud1;
+                        }
+                        System.out.println("A>B");
+                        b += a;
+                        a = 0;
                     }
+                    System.out.println(">A");
+                    System.out.println("A>B");
+                    a = b + sosud1 - sosud2;
+                    System.out.println("B>");
+                    b = 0;
+
+                }
+                else {
+
+                    while (a<(sosud1-sosud2)) {
+                        if (b==0){
+                            System.out.println(">B");
+                            b = sosud2;
+                        }
+                        System.out.println("B>A");
+                        a += b;
+                        b = 0;
+                    }
+                    System.out.println(">B");
+                    System.out.println("B>A");
+                    b = a + sosud2 - sosud1;
+                    System.out.println("A>");
+                    a = 0;
+
                 }
 
                 i++;
